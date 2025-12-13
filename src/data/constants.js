@@ -1,0 +1,1 @@
+export const Avatar_URL = "/images/my-pic-6.png";
