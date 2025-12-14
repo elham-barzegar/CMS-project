@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
-import SectionTitle from "../../components/common/SectionTitle.jsx";
+import SectionTitle from "../../components/common/SectionTitle";
 import {useNavigate} from "react-router";
+import Summaries from "../../features/Summaries/Summaries";
+import DetailsCharts from "../../features/DetailsCharts/DetailsCharts";
+import LastProductTable from "../../features/LastProductTable/LastProductTable";
 
 const Home = () => {
 
@@ -33,11 +36,11 @@ const Home = () => {
         <>
             {/* eslint-disable-next-line react-hooks/static-components */}
           <SectionTitle title="داشبورد" Buttons={<CTAButton />} />
-        {/*    <Summaries /> */}
+            <Summaries />
 
-            <div className="">
-                {/*<DetailsCharts />*/}
-                {/*<ProductsTable />*/}
+            <div className="mt-20 pb-10 space-y-10">
+                <DetailsCharts />
+                <LastProductTable />
                 {/*<QuickOverview />*/}
 
             </div>
