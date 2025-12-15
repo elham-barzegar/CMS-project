@@ -1,8 +1,10 @@
 import React from 'react'
 
-const TableBody = () => {
+const TableBody = ({children}) => {
     return (
-        <div>TableBody</div>
+        <div className="*:flex-1 *:shrink">
+            {children}
+        </div>
     )
 }
 export default TableBody;
