@@ -4,7 +4,7 @@ import SummaryCard from "./components/SummaryCard.jsx";
 
 const Summaries = () => {
     const summaries = generateSummaries({
-        productsLength: 4,
+        productsLength: 90,
         ticketsLength: 80,
         adminsLength :3,
         usersLength: 200,

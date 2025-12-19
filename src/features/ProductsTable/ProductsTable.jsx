@@ -1,8 +1,8 @@
-import Table from "../../components/common/Table/Table";
+import Table from "../../components/common/Table/Table.jsx";
 import {Link} from "react-router";
 import {MdOpenInNew} from "react-icons/md";
-import TableHead from "../../components/common/Table/elements/TableHead";
-import TableHeadCell from "../../components/common/Table/elements/TableHeadCell";
+import TableHead from "../../components/common/Table/elements/TableHead.jsx";
+import TableHeadCell from "../../components/common/Table/elements/TableHeadCell.jsx";
 import {products, productsTableHeadRow} from "../../data/products.js";
 import TableBody from "../../components/common/Table/elements/TableBody.jsx";
 import TableRow from "../../components/common/Table/elements/TableRow.jsx";
@@ -34,10 +34,24 @@ const LastProductTable = () => {
         const newProducts = lastProducts.filter(product => product.id !== id);
         setLastProducts(newProducts)
     }
+     const changeProductVisibility = (id) => {
+        const newProducts = lastProducts.map(product => {
+            return product.id === id
+                ? { ... product , isPublished : !product.isPublished }
+                : { ... product };
+        })
+         setLastProducts(newProducts)
+     }
 
     return (
         <div>
-            <Table header={{title: "لیست محصولات", Buttons: Buttons}}>
+            <Table header={{title: "لیست محصولات", Buttons: Buttons}}
+                   pagination={{
+                       items: products,
+                       setItems: setLastProducts,
+                       itemsPerPage: 5,
+                   }}
+            >
                 <TableHead>
                     { productsTableHeadRow.map((row) => (
                             <TableHeadCell key={row}>{row}</TableHeadCell>
@@ -63,7 +77,7 @@ const LastProductTable = () => {
                                 <TableCell>
                                     <div className="flex items-center gap-2">
                                         <RemoveProductIcon product={product} handler={removeProduct} />
-                                        <ChangeVisibilityIcon product={product} />
+                                        <ChangeVisibilityIcon product={product} handler={changeProductVisibility}/>
                                         <EditProductIcon product={product} />
                                     </div>
                                 </TableCell>

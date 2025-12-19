@@ -8,7 +8,7 @@ const DetailsCharts = () => {
         productsLength: 90,
         usersLength: 200,
         adminsLength: 3,
-        ticketsLength: 195,
+        ticketsLength: 80,
     })
     return (
         <div className="p-5 space-y-10 bg-white border rounded-xl primary-border-color">

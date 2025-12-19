@@ -27,7 +27,7 @@ const Modal = ({Trigger, children, title, onSubmit}) => {
                         {children}
                     </div>
                     <div className="min-h-14 flex items-center justify-end gap-2 px-4 bg-[#F6F8FA]">
-                        <ModalFooter />
+                        <ModalFooter onSubmit={onSubmit} onClose={closeModal}/>
                     </div>
 
                 </div>

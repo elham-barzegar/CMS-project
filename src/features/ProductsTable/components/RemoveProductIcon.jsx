@@ -1,5 +1,5 @@
 import React from 'react'
-import Modal from "../../../components/common/Modal";
+import Modal from "../../../components/common/Modal.jsx";
 import {HiOutlineTrash} from "react-icons/hi";
 
 const RemoveProductIcon = ({product, handler}) => {

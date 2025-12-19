@@ -1,8 +1,9 @@
 import React from 'react'
+import clsx from "clsx";
 
-const TableCell = ({children}) => {
+const TableCell = ({children, className}) => {
     return (
-        <div className="line-clamp-1">
+        <div className={clsx(className, "line-clamp-1") }>
             {children}
         </div>
     )

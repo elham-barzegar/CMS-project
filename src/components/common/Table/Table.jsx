@@ -1,14 +1,26 @@
 import React from 'react'
 import TableHeader from "./elements/TableHeader.jsx";
+import Pagination from "../Pagination.jsx";
 
-const Table = ({header= {title:"لیست آیتم ها" , Buttons: undefined}, children}) => {
+const Table = ({header= {title:"لیست آیتم ها" , Buttons: undefined},
+                   children,
+                   pagination={
+                      items: null,
+                      setItems: null,
+                      itemsPerPage: null,
+},
+               }) => {
     return (
         <div className="mt-10 border min-w-full bg-white primary-border-color rounded-xl overflow-hidden">
             <TableHeader header={header} />
-            <div>
-                {children}
-            </div>
+            <div>{children}</div>
 
+            <Pagination
+                items={pagination.items}
+                setItems={pagination.setItems}
+                itemsPerPage={pagination.itemsPerPage}
+
+            />
         </div>
     )
 }
