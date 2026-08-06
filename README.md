@@ -8,6 +8,7 @@ A modern and responsive CMS Admin Dashboard built with React and Tailwind CSS.
 
 https://cms-project-seven-peach.vercel.app/
 
+![Project Preview](./home.png)
 
 ## 📌 Overview
 
